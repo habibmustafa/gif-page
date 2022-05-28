@@ -88,34 +88,135 @@ nav .active {
    background-color: transparent;
    border: none;
    outline: none;
-   text-align: center;
-   vertical-align: center;
    cursor: pointer;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 /* search finish */
 
 /* mainpage */
 
+.main-page h2 {
+   font-size: 35px;
+}
+
 .main-page h3 {
    font-size: 25px;
    margin-bottom: 20px;
 }
 
-.main-page .gif-wrapper {
-   display: inline-flex;
-   flex-wrap: wrap;
+/* main-page finish */
+
+/* feature gif start */
+
+.feature-gifs {
+   margin-bottom: 20px;
+
+}
+
+.gif-wrapper {
+   /* margin: 0 auto;
+   columns: 4;
+   gap: 20px; */
+}
+
+.my-masonry-grid {
+   /* display: -webkit-box; 
+   display: -ms-flexbox;  */
+   display: flex;
    justify-content: center;
-   width: 100%;
-   gap: 20px;
+   margin-left: -30px;
+   /* gutter size offset */
+}
+
+.my-masonry-grid_column {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-left: 30px;
+   /* gutter size */
+   background-clip: padding-box;
+   width: 300px !important;
+}
+
+/* Style your items */
+.my-masonry-grid_column>div {
+   /* change div to reference your elements you put in <Masonry> */
+   margin-bottom: 30px;
 }
 
 .gif {
-   height: auto;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
    width: 260px;
-} 
+   cursor: pointer;
+   margin-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+   .gif {
+      transform: scale(0.9);
+   }
+
+   .my-masonry-grid_column {
+      width: 260px !important;
+   }
+}
+
+.gif:hover {
+   transform: scale(1.02);
+}
 
 .gif img {
    width: 100%;
+   height: 100%;
    border-radius: 5px;
-} 
+}
+
+/* feature gif finish */
+
+/* trend slider start */
+
+.trend-search {
+   margin-bottom: 20px;
+   position: relative;
+}
+
+.trend-item {
+   padding: 0 10px;
+}
+
+.trend-item h6 {
+   font-size: 16px;
+   font-weight: 500;
+}
+
+.trend-gif {
+   height: 100px;
+   border-radius: 5px;
+   background-size: cover;
+}
+
+.next-arrow {
+   display: block;
+   position: absolute;
+   right: -25px;
+   top: 40px;
+   cursor: pointer;
+}
+
+.prev-arrow {
+   display: block;
+   position: absolute;
+   left: -25px;
+   top: 40px;
+   cursor: pointer;
+}
+
+.next-arrow:hover,
+.prev-arrow:hover {
+   opacity: 0.7;
+}
+
+/* trend slider finish */
