@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import GifItem from '../Components/GifItem';
 import Masonry from 'react-masonry-css';
 import SearchSuggestions from '../Components/SearchSuggestions';
-import { setInputChange,setSuggestions, setSearch } from '../Redux/action';
+import { setInputChange, setSuggestions, setSearch } from '../Redux/action';
 
 const breakPoints = {
    default: 4,
@@ -14,13 +14,13 @@ const breakPoints = {
 }
 
 function SearchPage({ getSearch, getSuggestions, setSuggestions, setSearch }) {
-   const { inputValue } = useParams()
+   const { value } = useParams()
 
    useEffect(() => {
-      setSearch(inputValue)
-      setSuggestions(inputValue)
-   },[])
-   
+      setSearch(value)
+      setSuggestions(value)
+   },[setSearch, setSuggestions])
+
    console.log(getSuggestions);
    return (
       <div className="main-page">
