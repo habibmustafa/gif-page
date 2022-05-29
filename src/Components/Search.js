@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { GoSearch } from 'react-icons/go'
 import { connect } from 'react-redux'
-import { setSearch } from '../Redux/action'
+import { setInputChange, setSearch, setSuggestions } from '../Redux/action'
 import { useNavigate } from 'react-router-dom'
 
-
-function Search({ setSearch }) {
-   const [value, setValue] = useState('')
+function Search({ setSearch, setSuggestions, value, setValue }) {
 
    let navigate = useNavigate()
    const handleClick = () => {
       navigate(`/search/${value}`)
       setSearch(value)
-      setValue('') //sifirla
+      setSuggestions(value)
    }
 
    const enterClick = (e) => {
@@ -37,19 +35,25 @@ function Search({ setSearch }) {
                   type='search'
                   placeholder='Search for GIFs and Sickers'
                />
-               {/* <Link to={`/search/${value}`}> */}
                <button onClick={handleClick}><GoSearch size={20} /></button>
-               {/* </Link> */}
             </div>
          </div>
       </div>
    )
 }
 
-const mapDispatch = dispatch => {
+const mapState = state => {
    return {
-      setSearch: (name) => { dispatch(setSearch(name)) }
+      value: state.inputValue
    }
 }
 
-export default connect(undefined, mapDispatch)(Search)
+const mapDispatch = dispatch => {
+   return {
+      setValue: (value) => { dispatch(setInputChange(value)) },
+      setSearch: (name) => { dispatch(setSearch(name)) },
+      setSuggestions: (name) => { dispatch(setSuggestions(name)) }
+   }
+}
+
+export default connect(mapState, mapDispatch)(Search)
