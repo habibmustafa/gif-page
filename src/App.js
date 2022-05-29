@@ -17,7 +17,7 @@ function App() {
          <Search />
          <Routes>
             <Route path='/' element={<MainPage />} />
-            <Route path='/search/:value' element={<SearchPage />} />
+            <Route path='/search/:inputValue' element={<SearchPage />} />
             <Route path='/user' element={<User />} />
             <Route path='/view/:name' element={<GifView />} />
             <Route path='/About' element={<About />} />

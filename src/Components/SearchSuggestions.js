@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 function SearchSuggestions({ item, setSearch, value, setValue }) {
 
    let navigate = useNavigate()
-   const handleClick = (e) => {
+   const handleClick = () => {
       navigate(`../search/${item}`)
       setSearch(item)
       setValue(item)

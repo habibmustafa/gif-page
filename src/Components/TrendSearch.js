@@ -34,12 +34,12 @@ function TrendSearch({trendGif, setTrendGif}) {
 
    useEffect(() => {
       getTrend().then((data) => setTrend(data.results));
-      setTrendGif('it')
       
-   }, [])
+   },[])
 
+   // setTrendGif('it')
    // helelik
-   let a = trendGif.length ? trendGif[0].media[0].nanogif.url : null
+   // let a = trendGif.length ? trendGif[0].media[0].nanogif.url : null
    // console.log(a);
    // console.log(trendGif);
 
@@ -90,7 +90,7 @@ function TrendSearch({trendGif, setTrendGif}) {
                {trend.length ? trend.map((item, index) => {
                   return (
                      <div className="trend-item" key={item} >
-                        <div className="trend-gif" style={{backgroundImage: `url(${a})`}}></div>
+                        <div className="trend-gif" style={{backgroundImage: `url(${"https://media.tenor.com/images/9dcc93bb7a1fabc08b60f7eb49d798d8/tenor.gif"})`}}></div>
                         <h6>{item}</h6>
                      </div>
                   )

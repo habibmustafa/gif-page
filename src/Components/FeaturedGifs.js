@@ -21,6 +21,7 @@ function FeaturedGifs() {
       840: 2,
       600: 1
    }
+   console.log(feature);
 
    return (
       <div className='feature-gifs'>
@@ -41,4 +42,4 @@ function FeaturedGifs() {
    )
 }
 
-export default FeaturedGifs
+export default (FeaturedGifs)

@@ -25,3 +25,12 @@ export const setSuggestions = name => {
       getData().then(data => dispatch({type: 'SEARCH_SUGGESTIONS', data: data.results}))
    }
 }
+
+export const setGifItem = ({...item}) => {
+   return {
+      type: 'GIF_ITEM_CLICK', 
+      payload: {
+         ...item
+      }
+   }
+}

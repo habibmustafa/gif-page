@@ -1,7 +1,8 @@
 const initialState = {
    inputValue: '',
    search: [],
-   searchSuggestions: []
+   searchSuggestions: [],
+   gifItem: ''
 }
 
 export default function reducer(state = initialState, action) {
@@ -24,6 +25,13 @@ export default function reducer(state = initialState, action) {
          return {
             ...state,
             searchSuggestions: action.data
+         }
+      }
+
+      case 'GIF_ITEM_CLICK': {
+         return {
+            ...state,
+            gifItem: action.payload
          }
       }
 
