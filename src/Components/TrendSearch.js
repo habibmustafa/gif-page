@@ -33,7 +33,7 @@ function TrendSearch({trendGif, setTrendGif}) {
    const [trend, setTrend] = useState([])
 
    useEffect(() => {
-      getTrend().then((data) => setTrend(data.results));
+      getTrend().then((data) => setTrend(data.results)).catch(err => console.log(err))
       
    },[])
 

@@ -12,6 +12,7 @@ export const setSearch = name => {
          return data
       }
       getData().then(data => dispatch({type: 'SEARCH', data: data.results}))
+      .catch(err => console.log(err))
    }
 }
 
@@ -23,14 +24,18 @@ export const setSuggestions = name => {
          return data
       }
       getData().then(data => dispatch({type: 'SEARCH_SUGGESTIONS', data: data.results}))
+      .catch(err => console.log(err))
    }
 }
 
-export const setGifItem = ({...item}) => {
-   return {
-      type: 'GIF_ITEM_CLICK', 
-      payload: {
-         ...item
+export const setGifItem = (id) => {
+   return (dispatch) => {
+      const getData = async () => {
+         const response = fetch(`https://g.tenor.com/v1/gifs?ids=${id}&key=O2F76B8G7S1C`)
+         const data = (await response).json()
+         return data
       }
+      getData().then(data => dispatch({type: 'GIF_ITEM_CLICK', data: data.results}))
+      .catch(err => console.log(err))
    }
 }

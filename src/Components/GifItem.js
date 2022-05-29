@@ -7,8 +7,8 @@ function GifItem({ setGifItem, ...item }) {
    
    let navigate = useNavigate()
    const handleClick = () => {
-      setGifItem({...item})
-      navigate(`/view/${item.content_description}-${item.id}`)
+      setGifItem(item.id)
+      navigate(`/view/${item.id}`)
    }
 
    return (
@@ -25,7 +25,7 @@ function GifItem({ setGifItem, ...item }) {
 
 const mapDispatch = dispatch => {
    return {
-      setGifItem: ({...item}) => {dispatch(setGifItem({...item}))}
+      setGifItem: (id) => {dispatch(setGifItem(id))}
    }
 }
 

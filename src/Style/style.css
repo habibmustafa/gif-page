@@ -153,6 +153,7 @@ nav .active {
    width: 250px;
    cursor: pointer;
    margin-bottom: 20px;
+   transition: 300ms;
 }
 
 @media (max-width: 900px) {

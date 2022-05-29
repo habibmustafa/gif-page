@@ -31,7 +31,7 @@ export default function reducer(state = initialState, action) {
       case 'GIF_ITEM_CLICK': {
          return {
             ...state,
-            gifItem: action.payload
+            gifItem: action.data
          }
       }
 

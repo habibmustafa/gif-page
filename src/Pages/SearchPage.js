@@ -19,9 +19,8 @@ function SearchPage({ getSearch, getSuggestions, setSuggestions, setSearch }) {
    useEffect(() => {
       setSearch(value)
       setSuggestions(value)
-   },[setSearch, setSuggestions])
+   },[setSearch, setSuggestions, value])
 
-   console.log(getSuggestions);
    return (
       <div className="main-page">
          <div className="container">
