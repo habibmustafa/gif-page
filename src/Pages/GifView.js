@@ -10,6 +10,7 @@ function GifView({ gifItem, setGifItem }) {
    useEffect(() => {
       setGifItem(name)
    }, [setGifItem, name])
+   console.log(gifItem);
 
    return (
       gifItem.length ? (
@@ -18,7 +19,6 @@ function GifView({ gifItem, setGifItem }) {
                <h3>{gifItem[0].content_description}</h3>
 
                <div className="gif-item-wrapper">
-
                   {/* left section */}
                   <div className="left">
                      <div className="big-gif" style={{ height: `${gifItem[0].media[0].mediumgif.dims[1]}px` }}>

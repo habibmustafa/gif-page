@@ -4,10 +4,10 @@ import MainPage from './Pages/MainPage'
 import User from './Pages/User'
 import GifView from './Pages/GifView'
 import About from './Pages/About'
+import SearchPage from './Pages/SearchPage'
 import Navbar from './Components/Navbar'
 import "./Style/style.css"
 import Search from './Components/Search'
-import SearchPage from './Pages/SearchPage'
 
 
 function App() {

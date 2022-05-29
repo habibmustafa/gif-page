@@ -2,7 +2,7 @@ const initialState = {
    inputValue: '',
    search: [],
    searchSuggestions: [],
-   gifItem: ''
+   gifItem: []
 }
 
 export default function reducer(state = initialState, action) {
