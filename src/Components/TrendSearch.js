@@ -45,7 +45,9 @@ function TrendSearch({trendGif, setTrendGif}) {
 
    var settings = {
       infinite: true,
-      speed: 500,
+      autoplay: true,
+      autoplaySpeed: 4000,
+      speed: 1200,
       slidesToShow: 5,
       slidesToScroll: 5,
       initialSlide: 0,

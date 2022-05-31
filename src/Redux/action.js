@@ -28,7 +28,7 @@ export const setSuggestions = name => {
    }
 }
 
-export const setGifItem = (id) => {
+export const setGifItem = id => {
    return (dispatch) => {
       const getData = async () => {
          const response = fetch(`https://g.tenor.com/v1/gifs?ids=${id}&key=O2F76B8G7S1C`)

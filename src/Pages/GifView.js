@@ -10,6 +10,7 @@ function GifView({ gifItem, setGifItem }) {
    useEffect(() => {
       setGifItem(name)
    }, [setGifItem, name])
+   
    console.log(gifItem);
 
    return (

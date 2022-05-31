@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import { GoSearch } from 'react-icons/go'
 import { connect } from 'react-redux'
-import { setInputChange, setSuggestions } from '../Redux/action'
+import { setInputChange, setSearch, setSuggestions } from '../Redux/action'
 import { useNavigate } from 'react-router-dom'
 
-function Search({ setSuggestions, value, setValue }) {
+function Search({ setSuggestions, value, setValue, setSearch }) {
 
    let navigate = useNavigate()
    const handleChange = e => {
@@ -15,6 +15,7 @@ function Search({ setSuggestions, value, setValue }) {
       if( !value  ) return false
       value && navigate(`/search/${value}`)
       setSuggestions(value)
+      setSearch(value) //helelik
    }
 
    const enterClick = (e) => {
@@ -76,6 +77,7 @@ const mapState = state => {
 const mapDispatch = dispatch => {
    return {
       setValue: (value) => { dispatch(setInputChange(value)) },
+      setSearch: (name) => { dispatch(setSearch(name))}, // helelik
       setSuggestions: (name) => { dispatch(setSuggestions(name)) }
    }
 }
