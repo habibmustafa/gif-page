@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
-import { connect } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom';
 import GifItem from '../Components/GifItem';
 import Masonry from 'react-masonry-css';
 import SearchSuggestions from '../Components/SearchSuggestions';
-import { setInputChange, setSuggestions, setSearch } from '../Redux/action';
+import { setSuggestions, setSearch } from '../Redux/action';
 
 const breakPoints = {
    default: 4,
@@ -13,13 +13,16 @@ const breakPoints = {
    600: 1
 }
 
-function SearchPage({ getSearch, getSuggestions, setSuggestions, setSearch }) {
+function SearchPage() {
+   const getSearch = useSelector(state => state.search)
+   const getSuggestions = useSelector(state => state.searchSuggestions)
+   const dispatch = useDispatch()
    const { value } = useParams()
 
    useEffect(() => {
-      setSearch(value)
-      setSuggestions(value)
-   },[setSearch, setSuggestions, value])
+      dispatch(setSearch(value))
+      dispatch(setSuggestions(value))
+   },[dispatch, value])
 
    return (
       <div className="main-page">
@@ -48,20 +51,4 @@ function SearchPage({ getSearch, getSuggestions, setSuggestions, setSearch }) {
    )
 }
 
-const mapState = (state) => {
-   return {
-      getSearch: state.search,
-      getSuggestions: state.searchSuggestions
-   }
-}
-
-const mapDispatch = dispatch => {
-   return {
-      setValue: (value) => { dispatch(setInputChange(value)) },
-      setSearch: (name) => { dispatch(setSearch(name)) },
-      setSuggestions: (name) => { dispatch(setSuggestions(name)) }
-   }
-}
-
-
-export default connect(mapState, mapDispatch)(SearchPage)
+export default SearchPage

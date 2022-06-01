@@ -12,7 +12,7 @@ function FeaturedGifs() {
    const [feature, setFeature] = useState([])
 
    useEffect(() => {
-      getFeatured().then((data) => setFeature(data.results));
+      getFeatured().then(data => setFeature(data.results));
    }, [])
 
    const breakPoints = {
@@ -37,8 +37,7 @@ function FeaturedGifs() {
                )) : null}
             </Masonry>
          </div>
-      </div >
-
+      </div>
    )
 }
 

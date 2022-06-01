@@ -1,17 +1,20 @@
-import React, { useEffect } from 'react'
-import { connect } from 'react-redux'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { setGifItem } from '../Redux/action';
 
-function GifView({ gifItem, setGifItem }) {
-   // const [gifId, setGifId] = useState([])
+// daxili state
+const getData = async (name) => {
+   const response = fetch(`https://g.tenor.com/v1/gifs?ids=${name}&key=O2F76B8G7S1C`)
+   const data = (await response).json()
+   return data
+}
+
+function GifView() {
+   const [gifItem, setGifItem] = useState([])
    const { name } = useParams()
-
-   useEffect(() => {
-      setGifItem(name)
-   }, [setGifItem, name])
    
-   console.log(gifItem);
+   useEffect(() => {
+      getData(name).then(data => setGifItem(data.results))
+   }, [name])
 
    return (
       gifItem.length ? (
@@ -41,16 +44,4 @@ function GifView({ gifItem, setGifItem }) {
    )
 }
 
-const mapState = state => {
-   return {
-      gifItem: state.gifItem
-   }
-}
-
-const mapDispatch = dispatch => {
-   return {
-      setGifItem: (gifitem) => { dispatch(setGifItem(gifitem)) }
-   }
-}
-
-export default connect(mapState, mapDispatch)(GifView)
+export default GifView

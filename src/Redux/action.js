@@ -28,14 +28,17 @@ export const setSuggestions = name => {
    }
 }
 
-export const setGifItem = id => {
-   return (dispatch) => {
-      const getData = async () => {
-         const response = fetch(`https://g.tenor.com/v1/gifs?ids=${id}&key=O2F76B8G7S1C`)
-         const data = (await response).json()
-         return data
-      }
-      getData().then(data => dispatch({type: 'GIF_ITEM_CLICK', data: data.results}))
-      .catch(err => console.log(err))
-   }
-}
+// en sonda baxarsan
+
+// export const setGifItem = id => {
+//    return (dispatch) => {
+//       const getData = async () => {
+//          const response = fetch(`https://g.tenor.com/v1/gifs?ids=${id}&key=O2F76B8G7S1C`)
+//          const data = (await response).json()
+//          return data
+//       }
+//       getData().then(data => dispatch({type: 'GIF_ITEM_CLICK', data: data.results}))
+//       .catch(err => console.log(err))
+//    }
+// }
+

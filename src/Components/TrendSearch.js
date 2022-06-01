@@ -14,11 +14,6 @@ const getTrend = async () => {
 
 function SampleNextArrow({onClick}) {
    return (
-   //   <div
-   //     className={`${className} next-arrow`}
-   //     style={{ ...style}}
-   //     onClick={onClick}
-   //   />
      <div onClick={onClick} className='next-arrow'><GrFormNext size={30}/></div>
    );
  }
@@ -27,15 +22,27 @@ function SampleNextArrow({onClick}) {
    return (
       <div onClick={onClick} className='prev-arrow'><GrFormPrevious size={30}/></div>
    );
- } 
+ }
+
+ let a = []
 
 function TrendSearch({trendGif, setTrendGif}) {
    const [trend, setTrend] = useState([])
+   // const [a, setA] = useState([])
 
    useEffect(() => {
-      getTrend().then((data) => setTrend(data.results)).catch(err => console.log(err))
+      getTrend().then(data => setTrend(data.results)).catch(err => console.log(err))
       
    },[])
+   // console.log(a);
+
+   // trend.map(item => {
+   //    setTrendGif(item)
+   //    return trendGif[0]
+   // })
+
+   // if(trend.length)
+   // console.log(trend)
 
    // setTrendGif('it')
    // helelik

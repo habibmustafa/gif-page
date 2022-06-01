@@ -1,12 +1,11 @@
 const initialState = {
    inputValue: '',
    search: [],
-   searchSuggestions: [],
-   gifItem: []
+   searchSuggestions: []
 }
 
 export default function reducer(state = initialState, action) {
-   switch (action.type) {
+      switch (action.type) {
       case 'VALUE_CHANGE': {
          return {
             ...state,
@@ -25,13 +24,6 @@ export default function reducer(state = initialState, action) {
          return {
             ...state,
             searchSuggestions: action.data
-         }
-      }
-
-      case 'GIF_ITEM_CLICK': {
-         return {
-            ...state,
-            gifItem: action.data
          }
       }
 

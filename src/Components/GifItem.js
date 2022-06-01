@@ -1,13 +1,10 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { setGifItem } from '../Redux/action'
 
-function GifItem({ setGifItem, ...item }) {
+function GifItem({ ...item }) {
    
    let navigate = useNavigate()
    const handleClick = () => {
-      setGifItem(item.id)
       navigate(`/view/${item.id}`)
    }
 
@@ -21,12 +18,4 @@ function GifItem({ setGifItem, ...item }) {
    )
 }
 
-
-
-const mapDispatch = dispatch => {
-   return {
-      setGifItem: (id) => {dispatch(setGifItem(id))}
-   }
-}
-
-export default connect(undefined, mapDispatch)(GifItem)
+export default GifItem

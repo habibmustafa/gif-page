@@ -1,15 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { setSearch, setInputChange } from '../Redux/action'
+import { setSearch, setInputChange, setSuggestions } from '../Redux/action'
 import { useNavigate } from 'react-router-dom'
 
-function SearchSuggestions({ item, setSearch, value, setValue }) {
+function SearchSuggestions({ item, setSearch, setSuggestions, setValue }) {
 
    let navigate = useNavigate()
    const handleClick = () => {
+      // setSuggestions('') helelik qalsin
       navigate(`../search/${item}`)
       setSearch(item)
       setValue(item)
+      
    }
    return (
       <button onClick={handleClick} className='suggestions-button'>
@@ -27,7 +29,8 @@ const mapState = state => {
 const mapDispatch = dispatch => {
    return {
       setSearch: (name) => { dispatch(setSearch(name)) },
-      setValue: (value) => { dispatch(setInputChange(value)) }
+      setValue: (value) => { dispatch(setInputChange(value)) },
+      setSuggestions: (name) => { dispatch(setSuggestions(name)) }
    }
 }
 
