@@ -41,4 +41,4 @@ function FeaturedGifs() {
    )
 }
 
-export default (FeaturedGifs)
+export default FeaturedGifs

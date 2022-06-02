@@ -28,10 +28,13 @@ nav .container {
    align-items: center;
 }
 
-nav .logo {
+.logo {
+   display: inline-block;
    font-size: 32px;
    font-weight: 700;
    color: brown;
+   cursor: pointer;
+   transition: 0.3s;
 }
 
 nav a {
@@ -60,18 +63,43 @@ nav .active {
 
 .search {
    background-color: darkcyan;
-   padding: 15px 0;
    margin-bottom: 30px;
+   position: sticky;
+   top: 0;
+   z-index: 10;
+}
+/* 
+.search .container {
+   display: flex;
+} */
+
+.input-search-container {
+   display: inline-block;
+   width: 100%;
+   position: relative;
+   height: 75px;
+   padding: 15px 0;
+}
+
+.logo .hidden {
+   opacity: 0;
 }
 
 .input-search {
-   width: 100%;
+   position: absolute;
+   left: 0;
+   right: 0;
    background-color: #fff;
    height: 45px;
-   display: flex;
+   display: inline-flex;
    align-items: center;
    border-radius: 5px;
    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+   transition: 0.3s;
+}
+
+.input-search.active {
+   left: 75px;
 }
 
 .input-search input {

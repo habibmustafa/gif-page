@@ -1,14 +1,13 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { FaUser } from 'react-icons/fa'
-import { connect } from 'react-redux'
-import { setInputChange } from '../Redux/action'
+import { Logo } from './ui/Logo'
 
-function Navbar({ setValue }) {
+function Navbar() {
    return (
       <nav>
          <div className="container">
-            <div onClick={() => setValue('') } className="logo"><Link to="/">Gifs</Link></div>
+            <Logo className="logo" />
             <ul className='navItems'>
                <li><Link to="/user"><FaUser size={25} /></Link></li>
                <li>Explore</li>
@@ -19,10 +18,4 @@ function Navbar({ setValue }) {
    )
 }
 
-const mapDispatch = dispatch => {
-   return {
-      setValue: ((value) => { dispatch(setInputChange(value)) })
-   }
-}
-
-export default connect(undefined, mapDispatch)(Navbar)
+export default Navbar
