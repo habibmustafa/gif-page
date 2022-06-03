@@ -6,6 +6,7 @@ import GifItem from '../Components/GifItem';
 import Masonry from 'react-masonry-css';
 import SearchSuggestions from '../Components/SearchSuggestions';
 import { setSuggestions, setSearch } from '../Redux/action';
+import Loading from '../Components/ui/Loading';
 
 const breakPoints = {
    default: 4,
@@ -44,7 +45,7 @@ function SearchPage() {
                >
                   {getSearch ? getSearch.map(item => (
                      <GifItem key={item.id} {...item} />
-                  )) : null}
+                  )) : <Loading />}
                </Masonry>
             </div>
          </div>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './FeaturedGifs.css'
 import GifItem from './GifItem'
 import Masonry from 'react-masonry-css'
+import Loading from './ui/Loading'
 
 const getFeatured = async () => {
    const response = await fetch(`https://g.tenor.com/v1/trending?key=O2F76B8G7S1C&limit=50`)
@@ -35,7 +36,7 @@ function FeaturedGifs() {
    console.log(feature);
 
    return (
-      status ? <div className='feature-gifs'>
+      status && feature.length ? <div className='feature-gifs'>
          <h3>Featured GIFs</h3>
          <div className="gif-wrapper">
             <Masonry
@@ -48,7 +49,7 @@ function FeaturedGifs() {
                )) }
             </Masonry>
          </div>
-      </div> : <h1>loading..</h1>
+      </div> : <Loading />
    )
 }
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './GifView.css'
+import Loading from '../Components/ui/Loading'
 import { useParams } from 'react-router-dom'
 
 // daxili state
@@ -41,7 +42,7 @@ function GifView() {
                </div>
             </div>
          </div>
-      ) : null //loading...(yaz)
+      ) : <Loading /> //loading...(yaz)
    )
 }
 
