@@ -19,7 +19,7 @@ function FeaturedGifs() {
 
    useEffect(() => {
       getFeatured().then(data => setFeature(data.results));
-      setTimeout(statusFunc, 400);
+      setTimeout(statusFunc, 500);
 
       return () => {
          clearTimeout(statusFunc)

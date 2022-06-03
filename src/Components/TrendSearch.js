@@ -3,8 +3,10 @@ import './TrendSearch.css'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-// import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { GrFormNext, GrFormPrevious } from 'react-icons/gr'
+import { useNavigate } from 'react-router-dom';
+import { setSearch, setInputChange, setSuggestions } from '../Redux/action';
 
 const getTrend = async () => {
    const response = await fetch(`https://g.tenor.com/v1/trending_terms?key=O2F76B8G7S1C&limit=20`)
@@ -31,21 +33,26 @@ function SamplePrevArrow({ onClick }) {
 }
 
 function TrendSearch() {
+   const [trendName, setTrendName] = useState([])
    const [trend, setTrend] = useState([])
-   const [check, setCheck] = useState([])
    const [status, setStatus] = useState(false)
 
-   // const trendGif = useSelector(state => state.search)
-   // const dispatch = useDispatch()
+   const dispatch = useDispatch()
+   let navigate = useNavigate()
 
+   const handleClick = (name) => {
+      navigate(`../search/${name}`)
+      dispatch(setSearch(name))
+      dispatch(setInputChange(name))
+   }
 
    const statusFunc = () => {
       setStatus(true)
    }
 
    useEffect(() => {
-      getTrend().then(data => setTrend(data.results))
-      setTimeout(statusFunc, 400);
+      getTrend().then(data => setTrendName(data.results))
+      setTimeout(statusFunc, 500);
 
       return () => {
          clearTimeout(statusFunc)
@@ -53,16 +60,17 @@ function TrendSearch() {
    }, [])
 
    useEffect(() => {
+      // helelik
+      dispatch(setSuggestions(''))
       let array = []
-
-      trend.forEach(name => {
+      trendName.forEach(name => {
          getData(name).then(data => {
             array.push({ name: name, ...data })
          })
-         setCheck(array)
+         setTrend(array)
       })
 
-   }, [trend])
+   }, [trendName,dispatch])
 
    var settings = {
       infinite: true,
@@ -110,9 +118,11 @@ function TrendSearch() {
          <h3>Trending Searches</h3>
          <div className='slider'>
             <Slider {...settings}>
-               {check.map((item, index) => {
+               {trend.map((item, index) => {
                   return (
-                     <div className="trend-item" key={index} >
+                     <div 
+                     onClick={() => handleClick(item.name)}
+                     className="trend-item" key={index} >
                         <div className="trend-gif"
                            style={{
                               backgroundImage: `url(${item.results[0].media[0].nanogif.url})`,

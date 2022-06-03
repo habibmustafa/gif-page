@@ -1,4 +1,5 @@
 import React from 'react'
+import './Logo.css'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { setInputChange } from '../../Redux/action'
@@ -13,6 +14,8 @@ export const Logo = ({ className }) => {
    }
 
    return (
-      <div onClick={handleClick} className={className}>Gifs</div>
+      <div onClick={handleClick} className={className}>
+         GIFs
+      </div>
    )
 }

@@ -20,15 +20,6 @@ body {
    width: 90%;
 }
 
-.logo {
-   display: inline-block;
-   font-size: 32px;
-   font-weight: 700;
-   color: brown;
-   cursor: pointer;
-   transition: 0.3s;
-}
-
 /* feature and searchPage gif start */
 
 .my-masonry-grid {
