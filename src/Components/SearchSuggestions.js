@@ -1,4 +1,5 @@
 import React from 'react'
+import './SearchSuggestions.css'
 import { useDispatch } from 'react-redux'
 import { setSearch, setInputChange } from '../Redux/action'
 import { useNavigate } from 'react-router-dom'

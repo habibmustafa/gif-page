@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import './FeaturedGifs.css'
 import GifItem from './GifItem'
 import Masonry from 'react-masonry-css'
 
@@ -10,9 +11,19 @@ const getFeatured = async () => {
 
 function FeaturedGifs() {
    const [feature, setFeature] = useState([])
+   const [status, setStatus] = useState(false)
+
+   const statusFunc = () => {
+      setStatus(true)
+   }
 
    useEffect(() => {
       getFeatured().then(data => setFeature(data.results));
+      setTimeout(statusFunc, 400);
+
+      return () => {
+         clearTimeout(statusFunc)
+      }
    }, [])
 
    const breakPoints = {
@@ -24,7 +35,7 @@ function FeaturedGifs() {
    console.log(feature);
 
    return (
-      <div className='feature-gifs'>
+      status ? <div className='feature-gifs'>
          <h3>Featured GIFs</h3>
          <div className="gif-wrapper">
             <Masonry
@@ -32,12 +43,12 @@ function FeaturedGifs() {
                className="my-masonry-grid"
                columnClassName="my-masonry-grid_column"
             >
-               {feature.length ? feature.map(item => (
+               {feature.map(item => (
                   <GifItem key={item.id} {...item} />
-               )) : null}
+               )) }
             </Masonry>
          </div>
-      </div>
+      </div> : <h1>loading..</h1>
    )
 }
 

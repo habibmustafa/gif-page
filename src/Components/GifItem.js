@@ -1,4 +1,5 @@
 import React from 'react'
+import './GifItem.css'
 import { useNavigate } from 'react-router-dom'
 
 function GifItem({ ...item }) {

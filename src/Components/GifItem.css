@@ -1,0 +1,27 @@
+.gif {
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   width: 250px;
+   cursor: pointer;
+   margin-bottom: 20px;
+   transition: 300ms;
+}
+
+@media (max-width: 900px) {
+   .gif {
+      transform: scale(0.9);
+   }
+
+   .my-masonry-grid_column {
+      width: 250px !important;
+   }
+}
+
+.gif:hover {
+   transform: scale(1.01);
+}
+
+.gif img {
+   width: 100%;
+   height: 100%;
+   border-radius: 5px;
+}

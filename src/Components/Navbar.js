@@ -1,4 +1,5 @@
 import React from 'react'
+import './Navbar.css'
 import { Link, NavLink } from 'react-router-dom'
 import { FaUser } from 'react-icons/fa'
 import { Logo } from './ui/Logo'

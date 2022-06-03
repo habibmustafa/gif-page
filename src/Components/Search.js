@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import './Search.css'
 import { GoSearch } from 'react-icons/go'
 import { useDispatch, useSelector } from 'react-redux'
 import { setInputChange, setSearch, setSuggestions } from '../Redux/action'

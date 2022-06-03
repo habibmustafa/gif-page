@@ -1,0 +1,30 @@
+nav {
+   padding: 5px 0;
+   background-color: #fff;
+}
+
+nav .container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+nav a {
+   text-decoration: none;
+}
+
+nav ul {
+   display: flex;
+   align-items: center;
+   gap: 30px;
+}
+
+nav ul li {
+   list-style-type: none;
+   cursor: pointer;
+   font-size: 18px;
+}
+
+nav .active {
+   color: red;
+}
