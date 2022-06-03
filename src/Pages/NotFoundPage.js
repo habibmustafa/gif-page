@@ -1,13 +1,13 @@
 import React from 'react'
 import './NotFoundPage.css'
 
-const NotFoundPage = () => {
+const NotFoundPage = ({error}) => {
    return (
       <div className="error-page">
          <div className='container'>
             <div className="content">
-               <h2 className="header" data-text="404">
-                  404
+               <h2 className="header" data-text={error}>
+                  {error}
                </h2>
                <h4 data-text="Opps! Page not found">
                   Opps! Page not found

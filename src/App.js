@@ -22,7 +22,7 @@ function App() {
             <Route path='/user' element={<User />} />
             <Route path='/view/:name' element={<GifView />} />
             <Route path='/About' element={<About />} />
-            <Route path='*' element={<NotFoundPage />} />
+            <Route path='*' element={<NotFoundPage error='404' />} />
             {/* <Route path='/' element={<Contact />} /> */}
          </Routes>
       </div>
