@@ -129,9 +129,3 @@ function TrendSearch() {
 }
 
 export default TrendSearch
-// "https://media.tenor.com/images/9dcc93bb7a1fabc08b60f7eb49d798d8/tenor.gif"
-// ${trendGif[0].media[0].nanogif.url}
-
-// { name: name, gif: data.results[0].media[0].nanogif.url }
-
-// https://api.giphy.com/v1/gifs/search?q=excited&api_key=q7ajX8sEn318zyauW3Ecuorxh37RiTXI&limit=5
