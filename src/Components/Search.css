@@ -2,7 +2,7 @@
    background-color: darkcyan;
    margin-bottom: 30px;
    position: sticky;
-   top: 0;
+   top: -1px;
    z-index: 10;
 }
 

@@ -42,7 +42,7 @@ function GifView() {
                </div>
             </div>
          </div>
-      ) : <Loading /> //loading...(yaz)
+      ) : <Loading /> 
    )
 }
 
