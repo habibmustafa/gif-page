@@ -20,7 +20,7 @@ function GifView() {
       setStatus(true)
    }
    useEffect(() => {
-      setTimeout(statusFunc, 300);
+      setTimeout(statusFunc, 200);
       getData(name).then(data => {
          if(data.results) {
             setGifItem(data.results)

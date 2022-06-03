@@ -1,7 +1,8 @@
 const initialState = {
    inputValue: '',
    search: [],
-   searchSuggestions: []
+   searchSuggestions: [],
+   autocomplete: []
 }
 
 export default function reducer(state = initialState, action) {
@@ -24,6 +25,13 @@ export default function reducer(state = initialState, action) {
          return {
             ...state,
             searchSuggestions: action.data
+         }
+      }
+
+      case 'AUTOCOMPLETE': {
+         return {
+            ...state,
+            autocomplete: action.data
          }
       }
 

@@ -9,11 +9,11 @@
 .big-gif {
    margin-bottom: 20px;
    text-align: center;
-   width: 680px;
+   width: 700px;
 }
 
 .big-gif img {
-   width: auto;
+   width: 100%;
    height: 100%;
    border-radius: 5px;
    

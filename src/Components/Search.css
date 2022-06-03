@@ -29,7 +29,11 @@
    align-items: center;
    border-radius: 5px;
    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-   transition: 0.3s;
+   transition: left 0.3s;
+}
+
+.input-search:focus-within {
+   outline: 2px solid #111;
 }
 
 .input-search.active {
@@ -55,3 +59,4 @@
    justify-content: center;
    align-items: center;
 }
+

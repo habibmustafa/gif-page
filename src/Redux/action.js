@@ -28,6 +28,18 @@ export const setSuggestions = name => {
    }
 }
 
+export const autocomplete = name => {
+   return (dispatch) => {
+      const getData = async () => {
+         const response = fetch(`https://g.tenor.com/v1/autocomplete?q=${name}&key=O2F76B8G7S1C&limit=6`)
+         const data = (await response).json()
+         return data
+      }
+      getData().then(data => dispatch({type: 'AUTOCOMPLETE', data: data.results}))
+      .catch(err => console.log(err))
+   }
+}
+
 // en sonda baxarsan
 
 // export const setGifItem = id => {

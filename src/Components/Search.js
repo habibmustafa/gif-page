@@ -1,21 +1,27 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import './Search.css'
 import { GoSearch } from 'react-icons/go'
 import { useDispatch, useSelector } from 'react-redux'
-import { setInputChange, setSearch, setSuggestions } from '../Redux/action'
+import { setInputChange, setSearch, setSuggestions, autocomplete } from '../Redux/action'
 import { useNavigate } from 'react-router-dom'
 import { Logo } from './ui/Logo'
+import CompleteItem from './ui/CompleteItem'
 
 function Search() {
    const [navStyle, setNavStyle] = useState(false)
+   const [windowClick, setWindowClick] = useState(false)
+   const searchRef = useRef()
    // react-redux
    const value = useSelector(state => state.inputValue)
+   const complete = useSelector(state => state.autocomplete)
    const dispatch = useDispatch()
    // react-router-dom
    let navigate = useNavigate()
 
    const handleChange = e => {
       dispatch(setInputChange(e.target.value))
+      dispatch(autocomplete(e.target.value))
+      setWindowClick(false)
    }
 
    const handleClick = () => {
@@ -23,7 +29,13 @@ function Search() {
       value && navigate(`/search/${value}`)
       dispatch(setSuggestions(value))
       dispatch(setSearch(value))
+      setWindowClick(true)
    }
+
+   // const inputClick = (e) => {
+   //    setWindowClick(false)
+   //    dispatch(autocomplete(e.target.value))
+   // }
 
    const enterClick = (e) => {
       if (e.key === 'Enter') {
@@ -60,33 +72,54 @@ function Search() {
       }
    }
 
+   const wrapperClick = (e) => {
+      if(!searchRef.current.contains(e.target)) {
+         setWindowClick(true)
+      }
+   }
+
    useEffect(() => {
       window.addEventListener('keypress', enterClick)
       window.addEventListener('scroll', navbarStyle)
+      document.addEventListener('mousedown', wrapperClick)
+
       return () => {
          window.removeEventListener('keypress', enterClick)
          window.removeEventListener('scroll', navbarStyle)
+         document.removeEventListener('mousedown', wrapperClick)
       }
    })
 
+   console.log(1);
+
    return (
-      <div className='search'> 
+      <div className='search'>
          <div className="container">
             <div className='input-search-container'>
                <Logo className={navStyle ? 'logo' : 'logo hidden'} />
-               <div className={!navStyle ? 'input-search' : 'input-search active'}> {/* sonra bax */}
-                  <input onChange={(e) => handleChange(e)}
+               <div ref={searchRef} className={!navStyle ? 'input-search' : 'input-search active'}> {/* sonra bax */}
+                  <input
+                     onChange={(e) => handleChange(e)}
+                     // onFocus={(e) => inputClick(e)}
                      value={value}
                      type='text'
                      placeholder='Search for GIFs and Sickers'
                   />
                   <button onClick={handleClick}><GoSearch size={20} /></button>
+
+                  <ul className='autocomplete' onClick={() => setWindowClick(true)}>
+                     {complete && !windowClick ? complete.map(item => (
+                        <CompleteItem key={item} item={item} />
+                     )) : null}
+                  </ul>
                </div>
+
             </div>
+
+
          </div>
       </div>
    )
 }
-
 
 export default Search

@@ -21,6 +21,7 @@ function SearchPage() {
    const dispatch = useDispatch()
    const { value } = useParams()
 
+
    useEffect(() => {
       dispatch(setSearch(value))
       dispatch(setSuggestions(value))
