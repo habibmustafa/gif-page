@@ -23,7 +23,7 @@ function App() {
          <Routes>
             <Route path='/' element={<><Search /><MainPage /></>} />
             <Route path='/search/:value' element={<><Search /><SearchPage /></>} />
-            <Route path='/user/:name' element={<User />} />
+            <Route path='/user/:name' element={<><Search /><User /></>} />
             <Route path='/view/:name' element={<><Search /><GifView /></>} />
             <Route path='/sign-in' element={<Login />} />
             <Route path='/about' element={<About />} />

@@ -23,6 +23,8 @@ nav ul li {
    list-style-type: none;
    cursor: pointer;
    font-size: 18px;
+   display: flex;
+   align-items: center;
 }
 
 nav .active {
@@ -40,6 +42,7 @@ nav button {
    border: none;
    cursor: pointer;
    text-transform: uppercase;
+   transition: 0.1s;
 }
 
 nav button:hover {

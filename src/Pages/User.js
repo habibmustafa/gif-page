@@ -1,5 +1,7 @@
 import React from 'react'
 import NotFoundPage from './NotFoundPage';
+import Favorites from '../Components/Favorites'
+import './User.css'
 
 function User() {
    let username
@@ -8,12 +10,26 @@ function User() {
    console.log(path === `/user/${username}` && true);
 
 
-   if(path !== `/user/${username}`) {
+   if (path !== `/user/${username}`) {
       return <NotFoundPage error='400' />
    }
 
    return (
-      (<div>{username}</div>)
+      <div className="user-page">
+         <div className="user-header">
+            <div className="color-palette"></div>
+            <div className="container">
+               <div className="profile-section">
+                  <div className="photo">{username.slice(0, 1).toUpperCase()}</div>
+                  <div className="name">{username}</div>
+               </div>
+            </div>
+         </div>
+         <div className="container">
+            {/* favorites */}
+            <Favorites />
+         </div>
+      </div>
    )
 }
 
