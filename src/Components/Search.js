@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setInputChange, setSearch, setSuggestions, autocomplete } from '../Redux/action'
 import { useNavigate } from 'react-router-dom'
 import { Logo } from './ui/Logo'
-import CompleteItem from './ui/CompleteItem'
+import CompleteItem from './CompleteItem'
 
 function Search() {
    const [navStyle, setNavStyle] = useState(false)
@@ -73,7 +73,7 @@ function Search() {
    }
 
    const wrapperClick = (e) => {
-      if(!searchRef.current.contains(e.target)) {
+      if (!searchRef.current.contains(e.target)) {
          setWindowClick(true)
       }
    }
@@ -90,14 +90,15 @@ function Search() {
       }
    })
 
-   console.log(1);
-
    return (
       <div className='search'>
          <div className="container">
             <div className='input-search-container'>
                <Logo className={navStyle ? 'logo' : 'logo hidden'} />
-               <div ref={searchRef} className={!navStyle ? 'input-search' : 'input-search active'}> {/* sonra bax */}
+               <div
+                  ref={searchRef}
+                  className={!navStyle ? 'input-search' : 'input-search active'}
+               > {/* sonra bax */}
                   <input
                      onChange={(e) => handleChange(e)}
                      // onFocus={(e) => inputClick(e)}
@@ -113,10 +114,7 @@ function Search() {
                      )) : null}
                   </ul>
                </div>
-
             </div>
-
-
          </div>
       </div>
    )

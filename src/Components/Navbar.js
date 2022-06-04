@@ -12,6 +12,7 @@ function Navbar() {
             <ul className='navItems'>
                <li><Link to="/user"><FaUser size={25} /></Link></li>
                <li>Explore</li>
+               <li><NavLink to="/contact-us">Contact Us</NavLink></li>
                <li><NavLink to="/about">About</NavLink></li>
             </ul>
          </div>

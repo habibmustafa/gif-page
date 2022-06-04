@@ -10,8 +10,11 @@
 
 body {
    font-family: 'Inter', sans-serif;
-   /* background-image: url("mesh.png");
-   background-size: cover; */
+   background-color: #fff;
+   background-color: #fee2f8;
+   background-image: linear-gradient(to right, #faf7fa 0%, #f2fcf9 74%);
+   /* background-color: #f9fcff;
+   background-image: linear-gradient(147deg, #f9fcff 0%, #dee4ea 74%); */
 }
 
 .container {
