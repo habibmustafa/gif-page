@@ -23,12 +23,12 @@ function App() {
          <Routes>
             <Route path='/' element={<><Search /><MainPage /></>} />
             <Route path='/search/:value' element={<><Search /><SearchPage /></>} />
-            <Route path='/user' element={<User />} />
+            <Route path='/user/:name' element={<User />} />
             <Route path='/view/:name' element={<><Search /><GifView /></>} />
             <Route path='/sign-in' element={<Login />} />
             <Route path='/about' element={<About />} />
             <Route path='/contact-us' element={<Contact />} />
-            <Route path='*' element={<><Search /><NotFoundPage error='404' /></>} />
+            <Route path='*' element={<NotFoundPage error='404' />} />
          </Routes>
       </div>
    )

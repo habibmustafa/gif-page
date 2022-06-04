@@ -10,6 +10,12 @@ export const setLoginModal = value => {
    }
 }
 
+export const setLoginStatus = value => {
+   return {
+      type: "LOGIN_STATUS", value
+   }
+}
+
 export const setSearch = name => {
    return (dispatch) => {
       const getData = async () => {

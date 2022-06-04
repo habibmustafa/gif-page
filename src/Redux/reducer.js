@@ -1,6 +1,9 @@
 const initialState = {
    inputValue: '',
    loginModal: false,
+   loginStatus: !localStorage.loginStatus ? 
+   localStorage.setItem('loginStatus', false) :
+   localStorage.loginStatus,
    search: [],
    searchSuggestions: [],
    autocomplete: [],
@@ -19,6 +22,13 @@ export default function reducer(state = initialState, action) {
          return {
             ...state,
             loginModal: action.value
+         }
+      }
+
+      case 'LOGIN_STATUS': {
+         return {
+            ...state,
+            loginStatus: action.value
          }
       }
 
