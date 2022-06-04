@@ -1,8 +1,9 @@
 const initialState = {
    inputValue: '',
+   loginModal: false,
    search: [],
    searchSuggestions: [],
-   autocomplete: []
+   autocomplete: [],
 }
 
 export default function reducer(state = initialState, action) {
@@ -11,6 +12,13 @@ export default function reducer(state = initialState, action) {
          return {
             ...state,
             inputValue: action.value
+         }
+      }
+
+      case 'LOGIN_MODAL': {
+         return {
+            ...state,
+            loginModal: action.value
          }
       }
 

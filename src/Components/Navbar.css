@@ -28,3 +28,20 @@ nav ul li {
 nav .active {
    color: red;
 }
+
+nav button {
+   font-size: 15px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   padding: 8px 14px;
+   background: #09635d;
+   border-radius: 5px;
+   color: #fff;
+   border: none;
+   cursor: pointer;
+   text-transform: uppercase;
+}
+
+nav button:hover {
+   background: #0d948b;
+}

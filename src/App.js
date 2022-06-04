@@ -10,17 +10,22 @@ import Contact from './Pages/Contact'
 import NotFoundPage from './Pages/NotFoundPage'
 import "./Style/style.css"
 import Search from './Components/Search'
+import Login from './Pages/Login'
+import { useSelector } from 'react-redux'
 
 
 function App() {
+   const loginModal = useSelector(state => state.loginModal)
    return (
       <div className='app'>
+         {loginModal && <Login />}
          <Navbar />
          <Routes>
             <Route path='/' element={<><Search /><MainPage /></>} />
             <Route path='/search/:value' element={<><Search /><SearchPage /></>} />
             <Route path='/user' element={<User />} />
             <Route path='/view/:name' element={<><Search /><GifView /></>} />
+            <Route path='/sign-in' element={<Login />} />
             <Route path='/about' element={<About />} />
             <Route path='/contact-us' element={<Contact />} />
             <Route path='*' element={<><Search /><NotFoundPage error='404' /></>} />

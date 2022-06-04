@@ -4,6 +4,12 @@ export const setInputChange = value => {
    }
 }
 
+export const setLoginModal = value => {
+   return {
+      type: "LOGIN_MODAL", value
+   }
+}
+
 export const setSearch = name => {
    return (dispatch) => {
       const getData = async () => {
