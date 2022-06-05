@@ -54,3 +54,20 @@
 .favorites h2 {
    margin-bottom: 20px;
 }
+
+@media (max-width: 996px) {
+   .user-page .color-palette {
+      height: 350px;
+   }
+}
+
+@media (max-width: 780px) {
+   .user-page .profile-section {
+      bottom: -30px
+   }
+   
+   .user-page .photo {
+      width: 120px;
+      height: 120px;
+   }
+}

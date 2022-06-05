@@ -17,7 +17,9 @@ const GifItem = ({ ...item }) => {
          onMouseEnter={() => setHover(true)}
          onMouseLeave={() => setHover(false)}
          onClick={(e) => handleClick(e)}
-         className="gif" style={{ height: `${item.media[0].tinygif.dims[1]}px` }}
+         className="gif" 
+         tabIndex={45}
+         style={{ height: `${item.media[0].tinygif.dims[1]}px` }}
       >
          {hover} {/* helelik */}
          <Heart item={item} ref={heartRef} />

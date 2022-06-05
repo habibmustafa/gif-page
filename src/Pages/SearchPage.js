@@ -10,9 +10,9 @@ import Loading from '../Components/ui/Loading';
 
 const breakPoints = {
    default: 4,
-   1170: 3,
-   840: 2,
-   600: 1
+   1240: 3,
+   780: 2,
+   540: 1
 }
 
 function SearchPage() {
@@ -25,7 +25,7 @@ function SearchPage() {
    useEffect(() => {
       dispatch(setSearch(value))
       dispatch(setSuggestions(value))
-   },[dispatch, value])
+   }, [dispatch, value])
 
    return (
       <div className="main-page">

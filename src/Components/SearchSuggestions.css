@@ -9,13 +9,18 @@
    padding: 12px 18px;
    margin: 0 20px 20px 0;
    font-size: 15px;
-   font-weight: 600; /* bunu sonra deyis - 500 */
+   font-weight: 600;
+   /* bunu sonra deyis - 500 */
    letter-spacing: 1px;
    text-transform: uppercase;
    color: white;
    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
    cursor: pointer;
    transition: 100ms;
+}
+
+.suggestions-button:active {
+   transform: translateY(1px);
 }
 
 .suggestions-button:hover {
@@ -30,7 +35,7 @@
 
 .suggestions-button:nth-child(4n+2) {
    background-color: #BD97CB;
-} 
+}
 
 .suggestions-button:nth-child(4n+3) {
    background-color: #FBC740;
@@ -40,9 +45,17 @@
    background-color: #66D2D6;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 580px) {
    .suggestions-button {
       padding: 8px 15px;
-      font-size: 15px;
+      font-size: 14px;
+   }
+}
+
+@media (max-width: 480px) {
+   .suggestions-button {
+      padding: 6px 12px;
+      font-size: 12px;
+      margin: 0 15px 15px 0;
    }
 }

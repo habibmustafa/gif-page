@@ -26,6 +26,10 @@
    opacity: 1;
 }
 
+.trend-gif:active {
+   transform: scale(0.98);
+}
+
 .trend-gif:hover {
    /* sonra bax */
    opacity: 0.95;

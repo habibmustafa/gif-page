@@ -9,9 +9,9 @@ const Favorites = () => {
 
    const breakPoints = {
       default: 4,
-      1170: 3,
-      840: 2,
-      600: 1
+      1240: 3,
+      780: 2,
+      540: 1
    }
 
    return (

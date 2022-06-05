@@ -14,6 +14,10 @@
    cursor: pointer;
 }
 
+.heart-box:active {
+   transform: scale(0.94)
+}
+
 .heart {
    position: absolute;
    top: 0;

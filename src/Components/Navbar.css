@@ -45,6 +45,10 @@ nav button {
    transition: 0.1s;
 }
 
+nav button:active {
+   transform: scale(0.96);
+}
+
 nav button:hover {
    background: #0d948b;
 }

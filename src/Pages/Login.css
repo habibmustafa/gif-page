@@ -108,6 +108,10 @@
    letter-spacing: 1px;
 }
 
+.login-page .user .form-box button:active {
+   transform: scale(0.98);
+}
+
 .login-page .user .form-box button:hover {
    background: #0d948b;
 }

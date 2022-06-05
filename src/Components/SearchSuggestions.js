@@ -16,7 +16,7 @@ function SearchSuggestions({ item }) {
       
    }
    return (
-      <button onClick={handleClick} className='suggestions-button'>
+      <button tabIndex={56} onClick={handleClick} className='suggestions-button'>
          {item}
       </button>
    )

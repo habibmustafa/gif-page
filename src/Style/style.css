@@ -9,7 +9,7 @@
 }
 
 body {
-   font-family: 'Inter', sans-serif;
+   font-family: 'Inter', Arial, Helvetica, sans-serif;
    background-image: linear-gradient(to right, #f8eff8 0%, #f0fcf8 74%);
    /* background-color: #f9fcff;
    background-image: linear-gradient(147deg, #f9fcff 0%, #dee4ea 74%); */
@@ -39,7 +39,7 @@ body {
    padding-left: 30px;
    /* gutter size */
    background-clip: padding-box;
-   width: 300px !important;
+   /* width: 300px !important; */
 }
 
 /* Style your items */

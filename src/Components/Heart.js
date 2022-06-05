@@ -29,6 +29,7 @@ const Heart = React.forwardRef(({ item }, ref) => {
          ref={ref}
          onClick={heartClick}
          className="heart-box"
+         tabIndex={23}
       >
          <span
             tabIndex={30}

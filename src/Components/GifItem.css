@@ -1,3 +1,8 @@
+.gif-wrapper {
+   display: flex;
+   justify-content: center;
+}
+
 .gif {
    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
    width: 250px;
@@ -10,15 +15,20 @@
 @media (max-width: 900px) {
    .gif {
       transform: scale(0.9);
+      width: 240px !important;
    }
 
    .my-masonry-grid_column {
-      width: 250px !important;
+      width: 230px !important;
    }
 }
 
 .gif:hover {
    transform: scale(1.01);
+}
+
+.gif:active {
+   transform: scale(0.98);
 }
 
 .gif:hover .heart-box {
@@ -31,3 +41,10 @@
    border-radius: 5px;
 }
 
+@media (max-width:540px) {
+   .gif {
+      transform: scale(0.9);
+      width: 300px !important;
+      height: 110% !important;
+   }
+}

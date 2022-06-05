@@ -9,9 +9,9 @@ import Loading from '../Components/ui/Loading';
 
 const breakPoints = {
    default: 1,
-   // 1200: 3,
-   // 840: 2,
-   // 600: 1
+   830: 3,
+   740: 2,
+   500: 1
 }
 
 const Related = ({ name }) => {

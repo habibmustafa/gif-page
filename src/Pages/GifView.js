@@ -9,9 +9,9 @@ import SearchSuggestions from '../Components/SearchSuggestions'
 import { setSuggestions } from '../Redux/action';
 
 // icons
-import {BsFacebook, BsTwitter, BsInstagram, BsPinterest} from 'react-icons/bs'
-import {TbCopy} from 'react-icons/tb'
-import {BsThreeDots} from 'react-icons/bs'
+import { BsFacebook, BsTwitter, BsInstagram, BsPinterest } from 'react-icons/bs'
+import { TbCopy } from 'react-icons/tb'
+import { BsThreeDots } from 'react-icons/bs'
 import Related from '../Components/Related'
 
 
@@ -25,6 +25,7 @@ const getData = async (name) => {
 function GifView() {
    const [gifItem, setGifItem] = useState('')
    const [status, setStatus] = useState(false)
+   const [clipboardVisible, setClipboardVisible] = useState(false)
    const { name } = useParams()
 
    const getSuggestions = useSelector(state => state.searchSuggestions)
@@ -35,9 +36,20 @@ function GifView() {
    const statusFunc = () => {
       setStatus(true)
    }
+
+   //clipboard function
+   const clpFunc = () => {
+      setClipboardVisible(false)
+   }
+   const shareClick = (e) => {
+      navigator.clipboard.writeText(e.target.value)
+      setClipboardVisible(true)
+      setTimeout(clpFunc, 1000)
+      clearTimeout(clpFunc)
+   }
+
    useEffect(() => {
       setTimeout(statusFunc, 600);
-
       getData(name).then(data => {
          if (data.results) {
             setGifItem(data.results)
@@ -81,7 +93,7 @@ function GifView() {
                            <Heart item={gifItem[0]} ref={heartRef} />
                         </div>
                         <div className="share-social-media">
-                           <span title='Facebook'><BsFacebook className='icon'/></span>
+                           <span title='Facebook'><BsFacebook className='icon' /></span>
                            <span title='Twitter'><BsTwitter className='icon' /></span>
                            <span title='Instagram'><BsInstagram className='icon' /></span>
                            <span title='Pinterest'><BsPinterest className='icon' /></span>
@@ -97,15 +109,23 @@ function GifView() {
                         </div>
                         <div className="share-url">
                            <h5>Share URL</h5>
-                           <div className="url">
-                              {gifItem[0].itemurl}
-                           </div>
+                           {clipboardVisible && <span className="clipboard">Copied to Clipboard</span>}
+                           <input
+                              type='text'
+                              readOnly={true}
+                              className="url"
+                              value={gifItem[0].media[0].gif.url}
+                              onClick={(e) => shareClick(e)}
+                           />
+                           {/* {} */}
                         </div>
                         <div className="gif-details">
                            <h5>Details</h5>
-                           <p>File Size:</p>
-                           <p>Duration:</p>
-                           <p>Dimensions:</p>
+                           <p>File Size: {Math.floor(gifItem[0].media[0].gif.size / 1024)}KB</p>
+                           <p>Duration: {gifItem[0].media[0].mp4.duration} sec</p>
+                           <p>
+                              Dimensions: {gifItem[0].media[0].gif.dims[0]}x{gifItem[0].media[0].mediumgif.dims[1]}
+                           </p>
                         </div>
                      </div>
 
@@ -113,7 +133,7 @@ function GifView() {
                      <div className="right">
                         {/* Releated GIFs */}
                         <h3>Related GIFs</h3>
-                        <Related name={gifItem[0].content_description.split(' ').slice(0,2).join(' ')} />
+                        <Related name={gifItem[0].content_description.split(' ').slice(0, 2).join(' ')} />
                      </div>
 
                   </div>
@@ -124,5 +144,3 @@ function GifView() {
 }
 
 export default GifView
-
-// id ile axtarisda yalniz reqemler olanda xeta vermir, bos massiv verir. ama icinde herf varsa xetani verir. Ona gore ikili yoxlama oldu
