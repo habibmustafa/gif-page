@@ -17,7 +17,7 @@ const Favorites = () => {
    return (
       <div className="favorites">
          <h2>Favorites</h2>
-         <Masonry
+         {favorites.length ? <Masonry
                breakpointCols={breakPoints}
                className="my-masonry-grid"
                columnClassName="my-masonry-grid_column"
@@ -25,7 +25,7 @@ const Favorites = () => {
                {favorites.map(item => (
                   <GifItem key={item.id} {...item} />
                )) }
-            </Masonry>
+            </Masonry> : <h2>favorite yoxdu</h2> } {/* sonra duzelt */} 
       </div>
    )
 }
