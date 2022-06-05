@@ -3,13 +3,14 @@ import './Login.css'
 import { AiOutlineClose } from 'react-icons/ai'
 import { useDispatch } from 'react-redux'
 import { setLoginModal, setLoginStatus } from '../Redux/action'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
    const [signupShow, setSignupShow] = useState(false)
    const [username, setUsername] = useState('')
-
    const dispatch = useDispatch()
 
+   const navigate = useNavigate()
    const handleClick = () => {
       setSignupShow(!signupShow)
    }
@@ -17,9 +18,11 @@ const Login = () => {
    const handleFormSubmit = (e) => {
       localStorage.setItem('username', JSON.stringify(username))
       localStorage.setItem('loginStatus', true)
-      dispatch(setLoginStatus(localStorage.getItem('loginStatus')))
+      dispatch(setLoginStatus(localStorage.loginStatus))
+      
       setTimeout(() => {
          dispatch(setLoginModal(false))
+         navigate(`/user/${JSON.parse(localStorage.username)}`)
          // loading qoy
       }, 300);
       e.preventDefault()
