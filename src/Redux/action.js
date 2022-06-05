@@ -16,10 +16,10 @@ export const setLoginStatus = value => {
    }
 }
 
-export const setSearch = name => {
+export const setSearch = (name, limit=50) => {
    return (dispatch) => {
       const getData = async () => {
-         const response = fetch(`https://g.tenor.com/v1/search?q=${name}&key=O2F76B8G7S1C&limit=50`)
+         const response = fetch(`https://g.tenor.com/v1/search?q=${name}&key=O2F76B8G7S1C&limit=${limit}`)
          const data = (await response).json()
          return data
       }
