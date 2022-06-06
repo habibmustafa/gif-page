@@ -24,7 +24,7 @@
    top: 40px;
    width: 350px;
    height: calc(100% - 80px);
-   background: #095a55;
+   background: #008080;
    z-index: 1;
    padding: 40px;
    display: flex;
@@ -175,7 +175,7 @@
 .input-box button {
    position: relative;
    cursor: pointer;
-   background: #095a55;
+   background: #008080;
    color: #fff;
    border: none;
    max-width: 150px;
@@ -183,7 +183,7 @@
 }
 
 .input-box button:hover {
-   background: #0d948b;
+   background: #0fa79d;
 }
 
 /* responsive */
