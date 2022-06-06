@@ -27,8 +27,24 @@ nav ul li {
    align-items: center;
 }
 
-nav .active {
-   color: red;
+nav ul .nav-item,
+nav ul .nav-item a {
+   color: #222;
+   background-image: linear-gradient(transparent 0%, transparent 90%, hotpink 90%, hotpink 100%);
+   background-repeat: no-repeat;
+   background-size: 0% 100%;
+   background-position-x: right;
+   transition: background-size ease-in-out 300ms;
+}
+
+nav ul li:hover,
+nav ul li a:hover {
+   background-size: 100% 100%;
+   background-position-x: left;
+}
+
+nav .nav-item .active {
+   color: #0d948b;
 }
 
 nav button {

@@ -23,15 +23,16 @@ function Navbar() {
       <nav>
          <div className="container">
             <Logo className="logo" />
-            <ul className='navItems'>
+            <ul>
+               
+               <li className='nav-item'>Explore</li>
+               <li className='nav-item'><NavLink to="/contact-us">Contact Us</NavLink></li>
+               <li className='nav-item'><NavLink to="/about">About</NavLink></li>
                {loginStatus && username ?
                   <li>
                      <CgProfile onClick={() => navigate(`/user/${username}`)} size={28} />
                   </li> :
                   <button onClick={handleClick} type='button'>Sign In</button>}
-               <li>Explore</li>
-               <li><NavLink to="/contact-us">Contact Us</NavLink></li>
-               <li><NavLink to="/about">About</NavLink></li>
             </ul>
          </div>
       </nav>
