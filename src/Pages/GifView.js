@@ -26,6 +26,14 @@ function GifView() {
    const [gifItem, setGifItem] = useState('')
    const [status, setStatus] = useState(false)
    const [clipboardVisible, setClipboardVisible] = useState(false)
+   const [buttonActive, setButtonActive] = useState({
+      activeObject: 1,
+      objects: [
+         { id: 1, content: ' ● SD GIF' },
+         { id: 2, content: ' ● HD GIF' },
+         { id: 3, content: ' ● MP4' }
+      ]
+   })
    const { name } = useParams()
 
    const getSuggestions = useSelector(state => state.searchSuggestions)
@@ -65,6 +73,13 @@ function GifView() {
       }
    }, [name, dispatch])
 
+   const toggleActive = (index) => {
+      setButtonActive({
+         ...buttonActive,
+         activeObject: buttonActive.objects[index]
+      })
+   }
+
 
    if (gifItem === 3) {
       return (status && <NotFoundPage error='400' />)
@@ -85,20 +100,30 @@ function GifView() {
 
                         <div className="gif-actions">
                            <div className="change-media">
-                              <button className='active'> ● SD GIF</button>
-                              <button> ● HD GIF</button>
-                              <button> ● MP4</button>
+                              {buttonActive.objects.map((element, index) => (
+                                 <button
+                                    onClick={() => toggleActive(index)}
+                                    className={`${buttonActive.objects[index] === buttonActive.activeObject && 'active'}`}
+                                    key={element.id}
+                                 >
+                                    {element.content}
+                                 </button>
+                              ))}
                            </div>
                            {/* like gif */}
                            <Heart item={gifItem[0]} ref={heartRef} />
                         </div>
                         <div className="share-social-media">
-                           <span title='Facebook'><BsFacebook className='icon' /></span>
-                           <span title='Twitter'><BsTwitter className='icon' /></span>
-                           <span title='Instagram'><BsInstagram className='icon' /></span>
-                           <span title='Pinterest'><BsPinterest className='icon' /></span>
-                           <span title='Copy Link?'><TbCopy className='icon' /></span>
-                           <span title='Addition...'><BsThreeDots className='icon' /></span>
+                           <a target='_blank' rel='noreferrer' href='https://www.facebook.com/' title='Facebook'><BsFacebook className='icon' /></a>
+                           <a target='_blank' rel='noreferrer' href='https://twitter.com/' title='Twitter'><BsTwitter className='icon' /></a>
+                           <a target='_blank' rel='noreferrer' href='https://www.instagram.com/hebib_mustafa/' title='Instagram'><BsInstagram className='icon' /></a>
+                           <a target='_blank' rel='noreferrer' href='https://www.pinterest.com/' title='Pinterest'><BsPinterest className='icon' /></a>
+                           <span title='Copy Link?'>
+                              <TbCopy className='icon' />
+                           </span>
+                           <span title='Addition...'>
+                              <BsThreeDots className='icon' />
+                           </span>
                         </div>
                         <div className="suggestions">
                            <div className='search-suggestions'>

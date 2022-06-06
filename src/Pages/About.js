@@ -8,7 +8,7 @@ function About() {
          <div className="intro-part">
             <div className="container">
                <div className="left-box">
-                  <p className="intro">More than 300M people use ... every month to communicate with an animated GIF that expresses their exact thoughts or feelings.
+                  <p className="intro">More than 300M people use "GIFs" every month to communicate with an animated GIF that expresses their exact thoughts or feelings.
                   </p>
                   <div className="status">
                      <div className="user-num">
@@ -30,10 +30,10 @@ function About() {
          </div>
          <div className="talking-about">
             <div className="container">
-               <h3>People are talking about Tenor.</h3>
+               <h3>People are talking about "GIFs".</h3>
                <div className="cards">
                   <a target='_blank' rel="noreferrer" href='https://www.forbes.com/' className="card">
-                     <p>How ... aims to get GIF-sharing onto every mobile phone</p>
+                     <p>How "GIFs" aims to get GIF-sharing onto every mobile phone</p>
                      <img src="https://tenor.com/assets/img/about/about-us/press/forbes.png" alt="forbes" />
                   </a>
                   <a target='_blank' rel="noreferrer" href='https://edition.cnn.com/' className="card">
@@ -45,7 +45,7 @@ function About() {
                      <img src="https://tenor.com/assets/img/about/about-us/press/bloomberg.png" alt="bloomberg" />
                   </a>
                   <a target='_blank' rel="noreferrer" href='https://techcrunch.com/' className="card">
-                     <p>... hits 12B GIF searches every month</p>
+                     <p>"GIFs" hits 12B GIF searches every month</p>
                      <img src="https://tenor.com/assets/img/about/about-us/press/techcrunch.png" alt="techcrunch" />
                   </a>
                </div>
@@ -58,12 +58,12 @@ function About() {
                   <img src="https://softservellc.org/assets/img/meet-our-team-gif.gif" alt="founders" />
                </div>
                <div className="right-box">
-                  <h3>Meet the Team</h3>
+                  <h3>Meet the Creator</h3>
                   <p>
-                     ... was founded by an amateur in 2022 to define a new visual language for 3+ billion mobile users worldwide. <br />
-                     ..., we are happy to be supported by investors.
+                  "GIFs" was founded by an amateur in 2022 to define a new visual language for 3+ billion mobile users worldwide. <br />
+                  "GIFs", we are happy to be supported by investors.
                   </p>
-                  <span className='c'>© 2022 ... . All rights reserved.</span>
+                  <span className='c'>© 2022 "GIFs" . All rights reserved.</span>
                </div>
             </div>
          </div>

@@ -79,6 +79,7 @@
    gap: 20px;
 }
 
+.share-social-media a,
 .share-social-media span {
    cursor: pointer;
    display: flex;
@@ -91,38 +92,37 @@
    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
+.share-social-media a:active,
 .share-social-media span:active {
    transform: scale(0.95);
 }
 
-.share-social-media span:nth-child(1) {
+.share-social-media a:nth-child(1) {
    background-color: #3e2f9b;
 }
 
-.share-social-media span:nth-child(2) {
+.share-social-media a:nth-child(2) {
    background-color: #1d8fc8;
 }
 
-.share-social-media span:nth-child(3) {
+.share-social-media a:nth-child(3) {
    background-color: #c21f91;
 }
 
-.share-social-media span:nth-child(4) {
+.share-social-media a:nth-child(4) {
    background-color: #ca1f4a;
 }
 
-.share-social-media span:nth-child(5),
-.share-social-media span:nth-child(6) {
+.share-social-media span {
    background-color: #fff;
 }
 
-.share-social-media .icon {
+.share-social-media a .icon {
    color: #fff;
    font-size: 25px;
 }
 
-.share-social-media span:nth-child(5) .icon,
-.share-social-media span:nth-child(6) .icon {
+.share-social-media span .icon {
    color: #000;
    font-size: 25px;
 }
@@ -266,6 +266,7 @@
       height: 35px;
    }
 
+   .share-social-media a,
    .share-social-media span {
       width: 35px;
       height: 35px;
