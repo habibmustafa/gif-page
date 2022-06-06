@@ -1,5 +1,6 @@
 import React from 'react'
 import './About.css'
+import Tel from '../Assets/tel.png'
 
 function About() {
    return (
@@ -23,7 +24,7 @@ function About() {
 
                <div className="right-box">
                   {/* sekil */}
-                  <img src="https://tenor.com/assets/img/about/about-us/hero-phone.png" alt="about-phone" />
+                  <img src={Tel} alt="about-phone" />
                </div>
             </div>
          </div>
@@ -31,22 +32,22 @@ function About() {
             <div className="container">
                <h3>People are talking about Tenor.</h3>
                <div className="cards">
-                  <div className="card">
+                  <a target='_blank' rel="noreferrer" href='https://www.forbes.com/' className="card">
                      <p>How ... aims to get GIF-sharing onto every mobile phone</p>
                      <img src="https://tenor.com/assets/img/about/about-us/press/forbes.png" alt="forbes" />
-                  </div>
-                  <div className="card">
+                  </a>
+                  <a target='_blank' rel="noreferrer" href='https://edition.cnn.com/' className="card">
                      <p>The most popular GIF of 2022 actually perfectly sums up 2022</p>
                      <img src="https://tenor.com/assets/img/about/about-us/press/cnn.png" alt="cnn" />
-                  </div>
-                  <div className="card">
+                  </a>
+                  <a target='_blank' rel="noreferrer" href='https://www.bloomberg.com/' className="card">
                      <p>There's a reason you're seeing those doughnut GIFs</p>
                      <img src="https://tenor.com/assets/img/about/about-us/press/bloomberg.png" alt="bloomberg" />
-                  </div>
-                  <div className="card">
+                  </a>
+                  <a target='_blank' rel="noreferrer" href='https://techcrunch.com/' className="card">
                      <p>... hits 12B GIF searches every month</p>
                      <img src="https://tenor.com/assets/img/about/about-us/press/techcrunch.png" alt="techcrunch" />
-                  </div>
+                  </a>
                </div>
             </div>
          </div>

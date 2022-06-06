@@ -1,5 +1,4 @@
 .about-page .intro-part {
-   height: 450px;
    background: linear-gradient(272deg, #1bb5b5, #3dd1d1);
    background-size: 200% 200%;
    animation: AnimationNameA 15s ease infinite;
@@ -25,7 +24,7 @@
    height: 100%;
    display: flex;
    align-items: center;
-   justify-content: space-evenly;
+   justify-content: space-around;
 }
 
 .about-page .intro-part .left-box {
@@ -67,7 +66,8 @@
 
 .about-page .intro-part .right-box {
    width: auto;
-   height: 100%;
+   height: 450px;
+   margin-top: 10px;
 }
 
 .about-page .intro-part .right-box img {
@@ -97,6 +97,7 @@
 }
 
 .talking-about .card {
+   text-decoration: none;
    justify-self: center;
    width: 90%;
    height: 200px;
@@ -170,6 +171,9 @@
    font-size: 20px;
    max-width: 600px;
    line-height: 135%;
+   margin-bottom: 40px;
+   font-style: italic;
+   font-weight: 300;
 }
 
 .c {
@@ -177,4 +181,111 @@
    position: absolute;
    bottom: 0;
    right: 0;
+}
+
+@media (max-width: 930px) {
+   .about-page .intro-part .container {
+      flex-direction: column;
+      padding-top: 40px;
+   }
+
+   .about-page .intro-part .left-box {
+      width: 100%;
+      margin-bottom: 30px;
+   }
+
+   .about-page .intro-part .right-box {
+      width: auto;
+      height: auto;
+   }
+
+   /* talking about */
+
+   .talking-about h3 {
+      font-size: 30px;
+   }
+
+   .talking-about .card img {
+      height: 20px;
+   }
+
+   .talking-about .cards {
+      grid-template-columns: auto;
+      width: 100%;
+   }
+
+   .talking-about .card {
+      font-size: 18px;
+      width: 100%;
+   }
+
+   .meet-team .left-box {
+      width: 320px;
+      height: 240px;
+   }
+
+   .meet-team .right-box h3 {
+      font-size: 30px;
+   }
+
+   .meet-team .right-box p {
+      max-width: 100%;
+      font-size: 16px;
+   }
+}
+
+@media (max-width: 760px) {
+
+   .meet-team .left-box {
+      display: none;
+   }
+
+   .meet-team .right-box h3 {
+      text-align: center;
+   }
+
+   .meet-team .right-box {
+      display: flex;
+      flex-direction: column;
+   }
+
+   .meet-team .right-box p {
+      font-size: 15px;
+   }
+
+   .c {
+      font-size: 11px;
+   }
+}
+
+@media (max-width: 480px) {
+   .left-box .intro {
+      font-size: 18px;
+   }
+
+   .left-box .status .user-num span:first-child, 
+   .left-box .status .searches-num span:first-child {
+      font-size: 26px;
+   } 
+
+   .left-box .status .user-num span:last-child, 
+   .left-box .status .searches-num span:last-child {
+      font-size: 12px;
+   }
+
+   .talking-about h3 {
+      font-size: 25px;
+   }
+
+   .talking-about .card p {
+      font-size: 18px;
+   }
+
+   .talking-about .card img {
+      height: 17px;
+   }
+
+   .meet-team .right-box h3 {
+      font-size: 25px;
+   }
 }
