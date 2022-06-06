@@ -12,11 +12,11 @@ function About() {
                   </p>
                   <div className="status">
                      <div className="user-num">
-                        <span>300M+</span>
+                        <span>100M+</span>
                         <span>monthly users</span>
                      </div>
                      <div className="searches-num">
-                        <span>12B+</span>
+                        <span>10B+</span>
                         <span>searches every month</span>
                      </div>
                   </div>
@@ -45,7 +45,7 @@ function About() {
                      <img src="https://tenor.com/assets/img/about/about-us/press/bloomberg.png" alt="bloomberg" />
                   </a>
                   <a target='_blank' rel="noreferrer" href='https://techcrunch.com/' className="card">
-                     <p>"GIFs" hits 12B GIF searches every month</p>
+                     <p>"GIFs" hits 10B GIF searches every month</p>
                      <img src="https://tenor.com/assets/img/about/about-us/press/techcrunch.png" alt="techcrunch" />
                   </a>
                </div>
