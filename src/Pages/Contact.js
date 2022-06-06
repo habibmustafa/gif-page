@@ -23,13 +23,13 @@ const Contact = () => {
                      <li>
                         <span><GoMail size={30} className='icons' /></span>
                         <span>
-                           hebibullahmustafazade@gmail.com
+                           <a style={{color: 'white', textDecoration: 'none'}} href='mailto:hebibullahmustafazade@gmail.com'>hebibullahmustafazade@gmail.com</a>
                         </span>
                      </li>
                      <li>
                         <span><FiPhoneCall size={29} className='icons' /></span>
                         <span>
-                           +994516002230
+                           <a style={{color: 'white', textDecoration: 'none'}} href="tel:+994516002230">+994516002230</a>
                         </span>
                      </li>
                   </ul>
