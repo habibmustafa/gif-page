@@ -47,6 +47,7 @@ nav ul li:hover,
 nav ul li a:hover {
    background-size: 100% 100%;
    background-position-x: left;
+   opacity: 0.9;
 }
 
 nav .nav-item .active {

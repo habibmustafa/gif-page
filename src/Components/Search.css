@@ -81,3 +81,13 @@
    align-items: center;
 }
 
+@media(max-width:440px) {
+   .input-search input {
+      width: 100% !important;
+   }
+   
+
+   /* .search {
+      position: absolute;
+   } */
+}
