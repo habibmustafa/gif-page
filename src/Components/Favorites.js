@@ -25,7 +25,8 @@ const Favorites = () => {
                {favorites.map(item => (
                   <GifItem key={item.id} {...item} />
                )) }
-            </Masonry> : <h2>favorite yoxdu</h2> } {/* sonra duzelt */} 
+            </Masonry> : <div className='no-results'>No Results
+            <img src="https://cdn.dribbble.com/users/2394319/screenshots/4773584/media/598d91dbd5b67d8bbb9e38d2d8e0967c.png?compress=1&resize=800x600&vertical=top" alt="" /></div> } {/* sonra duzelt */} 
       </div>
    )
 }

@@ -9,7 +9,6 @@ function SearchSuggestions({ item }) {
    const dispatch = useDispatch()
    let navigate = useNavigate()
    const handleClick = () => {
-      // dispatch(setSuggestions('')) // helelik qalsin
       navigate(`../search/${item}`)
       dispatch(setSearch(item))
       dispatch(setInputChange(item))

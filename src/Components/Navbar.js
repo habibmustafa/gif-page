@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Navbar.css'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { CgProfile } from 'react-icons/cg'
@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setLoginModal } from '../Redux/action'
 
 function Navbar() {
+
 
    let username
    !localStorage.username ? username = null : username = JSON.parse(localStorage.username)
@@ -24,8 +25,7 @@ function Navbar() {
          <div className="container">
             <Logo className="logo" />
             <ul>
-               
-               <li className='nav-item'>Explore</li>
+               <li className='nav-item'> <NavLink to="/explore">Explore GIFs</NavLink></li>
                <li className='nav-item'><NavLink to="/contact-us">Contact Us</NavLink></li>
                <li className='nav-item'><NavLink to="/about">About</NavLink></li>
                {loginStatus && username ?
@@ -34,6 +34,8 @@ function Navbar() {
                   </li> :
                   <button onClick={handleClick} type='button'>Sign In</button>}
             </ul>
+
+
          </div>
       </nav>
    )

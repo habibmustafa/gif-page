@@ -11,6 +11,7 @@ import NotFoundPage from './Pages/NotFoundPage'
 import "./Style/style.css"
 import Search from './Components/Search'
 import Login from './Pages/Login'
+import Explore from './Pages/Explore'
 import { useSelector } from 'react-redux'
 
 
@@ -26,6 +27,7 @@ function App() {
             <Route path='/user/:name' element={<><Search /><User /></>} />
             <Route path='/view/:name' element={<><Search /><GifView /></>} />
             <Route path='/sign-in' element={<Login />} />
+            <Route path='/explore' element={<><Search /><Explore /></>} />
             <Route path='/about' element={<About />} />
             <Route path='/contact-us' element={<Contact />} />
             <Route path='*' element={<NotFoundPage error='404' />} />
