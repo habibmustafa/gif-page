@@ -41,7 +41,7 @@ function About() {
                      <img src="https://tenor.com/assets/img/about/about-us/press/cnn.png" alt="cnn" />
                   </a>
                   <a target='_blank' rel="noreferrer" href='https://www.bloomberg.com/' className="card">
-                     <p>There's a reason you're seeing those doughnut GIFs</p>
+                     <p>There's a reason you're seeing those doughnut "GIFs"</p>
                      <img src="https://tenor.com/assets/img/about/about-us/press/bloomberg.png" alt="bloomberg" />
                   </a>
                   <a target='_blank' rel="noreferrer" href='https://techcrunch.com/' className="card">
