@@ -1,4 +1,4 @@
-№ Web page
+# Web page
 --https://gifs-page.netlify.app/
 
 # Getting Started with Create React App
