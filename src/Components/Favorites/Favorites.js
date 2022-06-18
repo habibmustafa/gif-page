@@ -1,7 +1,7 @@
 import React from 'react'
 import './Favorites.css'
 import Masonry from 'react-masonry-css'
-import GifItem from '../GifItem'
+import GifItem from '../GifItem/GifItem'
 
 const Favorites = () => {
 

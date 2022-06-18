@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './FeaturedGifs.css'
-import GifItem from '../GifItem'
+import GifItem from '../GifItem/GifItem'
 import Masonry from 'react-masonry-css'
 import Loading from '../ui/Loading'
 

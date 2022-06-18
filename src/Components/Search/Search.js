@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setInputChange, setSearch, setSuggestions, autocomplete } from '../../Redux/action'
 import { useNavigate } from 'react-router-dom'
 import { Logo } from '../ui/Logo'
-import CompleteItem from './CompleteItem'
+import CompleteItem from '../CompleteItem/CompleteItem'
 
 function Search() {
    const [navStyle, setNavStyle] = useState(false)

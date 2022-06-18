@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import './GifItem.css'
 import { useNavigate } from 'react-router-dom'
-import Heart from './Heart'
+import Heart from '../Heart/Heart'
 
 const GifItem = ({ ...item }) => {
    const [hover, setHover] = useState(false)
