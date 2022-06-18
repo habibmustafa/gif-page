@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react'
 import './Navbar.css'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { CgProfile } from 'react-icons/cg'
-import { Logo } from './ui/Logo'
+import { Logo } from '../ui/Logo'
 import { useDispatch, useSelector } from 'react-redux'
-import { setLoginModal } from '../Redux/action'
+import { setLoginModal } from '../../Redux/action'
 
 function Navbar() {
 

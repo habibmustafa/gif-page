@@ -2,7 +2,7 @@ import React from 'react'
 import './CompleteItem.css'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { setSearch, setInputChange } from '../Redux/action'
+import { setSearch, setInputChange } from '../../Redux/action'
 import { WiDirectionUpRight } from 'react-icons/wi'
 
 const CompleteItem = ({ item }) => {

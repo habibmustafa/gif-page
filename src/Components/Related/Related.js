@@ -3,8 +3,8 @@ import './Related.css'
 import { useDispatch, useSelector } from 'react-redux'
 import GifItem from '../Components/GifItem';
 import Masonry from 'react-masonry-css';
-import { setSearch } from '../Redux/action';
-import Loading from '../Components/ui/Loading';
+import { setSearch } from '../../Redux/action';
+import Loading from '../ui/Loading';
 
 
 const breakPoints = {

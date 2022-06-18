@@ -2,9 +2,9 @@ import React, { useEffect, useState, useRef } from 'react'
 import './Search.css'
 import { GoSearch } from 'react-icons/go'
 import { useDispatch, useSelector } from 'react-redux'
-import { setInputChange, setSearch, setSuggestions, autocomplete } from '../Redux/action'
+import { setInputChange, setSearch, setSuggestions, autocomplete } from '../../Redux/action'
 import { useNavigate } from 'react-router-dom'
-import { Logo } from './ui/Logo'
+import { Logo } from '../ui/Logo'
 import CompleteItem from './CompleteItem'
 
 function Search() {

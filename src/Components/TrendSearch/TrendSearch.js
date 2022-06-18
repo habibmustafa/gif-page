@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { useDispatch } from 'react-redux';
 import { GrFormNext, GrFormPrevious } from 'react-icons/gr'
 import { useNavigate } from 'react-router-dom';
-import { setSearch, setInputChange, setSuggestions } from '../Redux/action';
+import { setSearch, setInputChange, setSuggestions } from '../../Redux/action';
 
 const getTrend = async () => {
    const response = await fetch(`https://g.tenor.com/v1/trending_terms?key=O2F76B8G7S1C&limit=20`)

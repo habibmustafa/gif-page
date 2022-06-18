@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import './FeaturedGifs.css'
-import GifItem from './GifItem'
+import GifItem from '../GifItem'
 import Masonry from 'react-masonry-css'
-import Loading from './ui/Loading'
+import Loading from '../ui/Loading'
 
 const getFeatured = async () => {
    const response = await fetch(`https://g.tenor.com/v1/trending?key=O2F76B8G7S1C&limit=50`)
