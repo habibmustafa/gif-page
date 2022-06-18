@@ -2,9 +2,9 @@ import React, {useState, useEffect} from 'react'
 import Masonry from 'react-masonry-css'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { setSearch, setInputChange } from '../Redux/action'
+import { setSearch, setInputChange } from '../../Redux/action'
 import './Explore.css'
-import Loading from '../Components/ui/Loading'
+import Loading from '../../Components/ui/Loading'
 
 const getExplore = async () => {
    const response = await fetch(`https://g.tenor.com/v1/categories?key=O2F76B8G7S1C`)

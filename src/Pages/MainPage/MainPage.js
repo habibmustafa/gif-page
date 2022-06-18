@@ -1,5 +1,5 @@
-import FeaturedGifs from '../Components/FeaturedGifs'
-import TrendSearch from '../Components/TrendSearch'
+import FeaturedGifs from '../../Components/FeaturedGifs'
+import TrendSearch from '../../Components/TrendSearch'
 
 function MainPage() {
    return (

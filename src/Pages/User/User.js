@@ -1,6 +1,6 @@
 import React from 'react'
-import NotFoundPage from './NotFoundPage';
-import Favorites from '../Components/Favorites'
+import NotFoundPage from '../NotFoundPage/NotFoundPage';
+import Favorites from '../../Components/Favorites'
 import './User.css'
 
 function User() {

@@ -1,6 +1,6 @@
 import React from 'react'
 import './About.css'
-import Tel from '../Assets/tel.png'
+import Tel from '../../Assets/tel.png'
 
 function About() {
    return (

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './Login.css'
 import { AiOutlineClose } from 'react-icons/ai'
 import { useDispatch } from 'react-redux'
-import { setLoginModal, setLoginStatus } from '../Redux/action'
+import { setLoginModal, setLoginStatus } from '../../Redux/action'
 import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
