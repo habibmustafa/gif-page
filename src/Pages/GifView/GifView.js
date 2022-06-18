@@ -4,10 +4,10 @@ import Loading from '../../Components/ui/Loading'
 import NotFoundPage from '../NotFoundPage/NotFoundPage'
 import { useParams } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import Heart from '../../Components/Heart'
-import SearchSuggestions from '../../Components/SearchSuggestions'
+import Heart from '../../Components/Heart/Heart'
+import SearchSuggestions from '../../Components/SearchSuggestions/SearchSuggestions'
 import { setSuggestions } from '../../Redux/action';
-import Related from '../../Components/Related'
+import Related from '../../Components/Related/Related'
 
 // icons
 import { BsFacebook, BsTwitter, BsInstagram, BsPinterest } from 'react-icons/bs'
